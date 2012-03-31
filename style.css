@@ -1,0 +1,130 @@
+/* DEFINICIONS GENÈRIQUES */
+
+@font-face {
+	font-family: codePro;
+	src: url( codePro.otf ) format("truetype");  
+}
+
+body {
+	font-family: codePro, verdana;
+}
+
+ul {
+	line-height: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* CLASSES GENÈRIQUES */
+
+.green {
+	color: #16ae00;
+}
+.orange {
+	color: #fb7e00;
+}
+.clickable {
+	cursor: pointer;
+}
+
+a.orange:hover {
+	color: #16ae00;
+}
+a.green:hover {
+	color: #fb7e00;
+}
+
+/* ESTRUCTURA */
+
+#wrapper {
+	padding-top: 25px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100px;
+	height: 550px;
+}
+
+#lateral {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 25px;
+	width: 250px;
+	height: 550px;
+	text-align: right;
+}
+
+#contents {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	overflow: hidden;
+	width: 765px;
+	padding: 15px;
+	padding-right: 30px;
+}
+
+/* LATERAL */
+
+#logo {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+#menu {
+	position: absolute;
+	top: 200px;
+	right: 0px;
+}
+
+#info {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+a.social-button {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background-position-x: 0px;
+	display: inline-block;
+}
+
+a.social-button:hover {
+	background-position-x: 32px;
+}
+
+a#yt {
+	background-image: url('yt.png');
+}
+
+a#fb {
+	background-image: url('fb.png');
+}
+
+/* MENÚ */
+
+ul#menu {
+	list-style: none;
+}
+
+#menu li:hover {
+	color: #fb7e00;
+}
+
+/* CONTINGUTS */
+#contents {
+	border: 5px solid #fb7e00;
+	border-radius: 15px;
+}
+
+#contents span {
+	display: block;
+	margin-bottom: 15px;
+}
+

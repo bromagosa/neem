@@ -1,0 +1,19 @@
+#scrollBall {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 10px;
+	height: 10px;
+	border-radius: 20px;
+	background-color: #ff8103;
+}
+
+#scrollLine {
+	border-radius: 20px;
+	position: absolute;
+	right: 15px;
+	top: 45px;
+	width: 10px;
+	background-color: #ffa953;
+}
+
