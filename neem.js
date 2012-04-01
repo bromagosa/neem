@@ -19,3 +19,9 @@ function nextPic(element) {
 	$("#contents")[0].scrollTop = $(element).next("div")[0].offsetTop;
 	refreshScrollBallPosition();
 }
+
+function firstPic() {
+	$($("div.photo")[0]).fadeOut(0, function(){$($("div.photo")[0]).fadeIn(200)});
+	$("#contents")[0].scrollTop = 0;
+	refreshScrollBallPosition();
+}
