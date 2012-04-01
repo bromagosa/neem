@@ -11,5 +11,11 @@ function load(sectionName){
 
 function startUp() {
 	load('portada');
- 	$(".menu").bind("click", function(){load($(this).attr("id"))})
+ 	$(".menu").bind("click", function(){ load($(this).attr("id")) });
+}
+
+function nextPic(element) {
+	$(element).next("div").fadeOut(0, function(){$(element).next("div").fadeIn(200)});
+	$("#contents")[0].scrollTop = $(element).next("div")[0].offsetTop;
+	refreshScrollBallPosition();
 }

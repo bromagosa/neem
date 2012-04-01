@@ -91,8 +91,12 @@ function dragged(evt) {
 function scrolled(evt) {
 	if (documentHeight > windowHeight) {
 		scrollableElement.scrollTop = scrollableElement.scrollTop - evt.wheelDelta; 
-		scrollBall[0].style.top = ((scrollableElement.scrollTop / (documentHeight - windowHeight )) * (windowHeight - scrollBallHeight)) + "px"; 
+		refreshScrollBallPosition();
 	}
+}
+
+function refreshScrollBallPosition() {
+	scrollBall[0].style.top = ((scrollableElement.scrollTop / (documentHeight - windowHeight )) * (windowHeight - scrollBallHeight)) + "px"; 
 }
 
 function clicked(evt) {

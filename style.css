@@ -128,3 +128,13 @@ ul#menu {
 	margin-bottom: 15px;
 }
 
+/* GALERIA */
+div.photo {
+	width: 765px;
+	height: 550px;
+	display: block;
+	text-align: center;
+}
+div.photo h3 {
+	padding-top: 15px;
+}
