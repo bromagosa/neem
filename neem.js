@@ -11,6 +11,10 @@ function load(sectionName){
 
 function startUp() {
 	load('portada');
+	bind_menus();
+}
+
+function bind_menus() {
  	$(".menu").bind("click", function(){ load($(this).attr("id")) });
 }
 

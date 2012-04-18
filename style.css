@@ -124,11 +124,12 @@ a#fb {
 
 /* MENÚ */
 
-ul#menu {
+ul.menu {
 	list-style: none;
 }
 
-#menu li:hover {
+li.menu:hover {
+	list-style: none;
 	color: #fb7e00;
 }
 
