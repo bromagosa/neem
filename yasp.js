@@ -82,7 +82,7 @@ function bindEvents() {
 
 function dragged(evt) {
 	if (documentHeight > windowHeight) {
-		var scrollBallPosition = Math.min(Math.max(0 , evt.offsetY - 45), windowHeight - scrollBallHeight);
+		var scrollBallPosition = Math.min(Math.max(0 , evt.offsetY - 75), windowHeight - scrollBallHeight);
 		scrollBall[0].style.top = scrollBallPosition + "px";
 		scrollLine[0].style.opacity = 1;
 		scrollableElement.scrollTop = (scrollBallPosition / (windowHeight - scrollBallHeight)) * (documentHeight - windowHeight);
