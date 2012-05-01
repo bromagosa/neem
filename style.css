@@ -48,7 +48,7 @@ a.green:hover {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	width: 1100px;
+	width: 1115px;
 	height: 550px;
 }
 
@@ -57,7 +57,7 @@ a.green:hover {
 	display: inline-block;
 	vertical-align: top;
 	float: left;
-	width: 250px;
+	width: 270px;
 	height: 550px;
 	text-align: right;
 }
@@ -98,6 +98,7 @@ a.green:hover {
 }
 
 #info {
+	font-size: 94%;
 	position: absolute;
 	bottom: 0;
 	right: 0;
