@@ -1,5 +1,12 @@
 var lang = "es";
 
+function switchLang(langString) {
+	lang = langString;
+	$("#lang span").removeClass("orange");
+	$("#lang span." + lang).addClass("orange");
+	startUp();
+}
+
 function load(sectionName){
 	$('#contents').fadeOut( 
 		200, 
@@ -9,12 +16,28 @@ function load(sectionName){
 	)
 }
 
-function startUp() {
-	load('portada');
-	bind_menus();
+function loadText(textName){
+	$("#" + textName + ".text").load(lang + "_" + textName + "_text.html");
 }
 
-function bind_menus() {
+function loadMenuTexts(){
+	loadText('portada');
+	loadText('quienes');
+	loadText('galeria');
+	loadText('colabora');
+	loadText('objetivos');
+	loadText('visitanos');
+	loadText('noticias');
+}
+
+function startUp() {
+	load('portada');
+	loadText('welcome');
+	loadMenuTexts();
+	bindMenus();
+}
+
+function bindMenus() {
  	$(".menu").bind("click", function(){ load($(this).attr("id")) });
 }
 

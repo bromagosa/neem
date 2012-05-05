@@ -43,6 +43,13 @@ a.green:hover {
 
 /* ESTRUCTURA */
 
+#lang {
+	font-size: 80%;
+	position: fixed;
+	right: 5px;
+	top: 5px;
+}
+
 #wrapper {
 	padding-top: 55px;
 	position: relative;
@@ -71,6 +78,20 @@ a.green:hover {
 	width: 765px;
 	padding: 15px;
 	padding-right: 30px;
+}
+
+/* IDIOMA */
+
+#lang span {
+	color: gray;
+}
+
+#lang span:first-child:after {
+	content: ' / ';
+	color: gray;
+}
+#lang span.orange {
+	color: #fb7e00;
 }
 
 /* LATERAL */
