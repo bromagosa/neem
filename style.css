@@ -6,21 +6,26 @@
 }
 
 body {
-	font-family: codePro, verdana;
+	font-family: verdana;
 }
 
 ul {
 	line-height: 30px;
+	text-align: justify;
 }
 
 a {
 	text-decoration: none;
 }
 
+span {
+	text-align: justify;
+}
+
 /* CLASSES GENÈRIQUES */
 
 .green {
-	color: #16ae00;
+	color: #1c8132;
 }
 .orange {
 	color: #fb7e00;
@@ -30,20 +35,31 @@ a {
 }
 
 a.orange:hover {
-	color: #16ae00;
+	color: #1c8132;
 }
 a.green:hover {
 	color: #fb7e00;
 }
 
+.centered {
+	text-align: center;
+}
+
 /* ESTRUCTURA */
 
+#lang {
+	font-size: 80%;
+	position: fixed;
+	right: 5px;
+	top: 5px;
+}
+
 #wrapper {
-	padding-top: 25px;
+	padding-top: 15px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	width: 1100px;
+	width: 1115px;
 	height: 550px;
 }
 
@@ -51,8 +67,8 @@ a.green:hover {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
-	margin-right: 25px;
-	width: 250px;
+	float: left;
+	width: 270px;
 	height: 550px;
 	text-align: right;
 }
@@ -61,37 +77,62 @@ a.green:hover {
 	display: inline-block;
 	position: relative;
 	vertical-align: top;
+	float: right;
 	overflow: hidden;
 	width: 765px;
 	padding: 15px;
 	padding-right: 30px;
 }
 
+/* IDIOMA */
+
+#lang span {
+	color: gray;
+}
+
+#lang span:first-child:after {
+	content: ' / ';
+	color: gray;
+}
+#lang span.orange {
+	color: #fb7e00;
+}
+
 /* LATERAL */
 
 #logo {
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: 0;
+	right: 0;
+}
+
+#welcome {
+	font-size: 15px;
+	padding-top: 20px;
+	text-align: right;
+	clear: both;
+	display: block;
 }
 
 #menu {
 	position: absolute;
-	top: 200px;
-	right: 0px;
+	text-align: right;
+	top: 180px;
+	right: 0;
 }
 
 #info {
+	font-size: 94%;
 	position: absolute;
-	bottom: 0px;
-	right: 0px;
+	bottom: 0;
+	right: 0;
 }
 
 a.social-button {
 	display: block;
 	width: 32px;
 	height: 32px;
-	background-position-x: 0px;
+	background-position-x: 0;
 	display: inline-block;
 }
 
@@ -109,22 +150,54 @@ a#fb {
 
 /* MENÚ */
 
-ul#menu {
+ul.menu {
 	list-style: none;
 }
 
-#menu li:hover {
+li.menu:hover {
+	list-style: none;
 	color: #fb7e00;
 }
 
 /* CONTINGUTS */
 #contents {
-	border: 5px solid #fb7e00;
-	border-radius: 15px;
+//	border: 5px solid #fb7e00;
+//	border-radius: 15px;
 }
 
 #contents span {
 	display: block;
 	margin-bottom: 15px;
+}
+
+/* GALERIA */
+div.photo {
+	width: 765px;
+	height: 550px;
+	display: block;
+	text-align: center;
+}
+
+div.photo h3 {
+	padding-top: 15px;
+}
+
+/* FOTOS ACOMPANYAMENT */
+div.photo-container {
+	height: 260px;
+	width: 765px;
+	text-align: center;
+	display: block;
+}
+
+div.photo.small {
+	height: 221px;
+	width: 300px;
+	display: inline-block;
+	margin: 10px;
+}
+
+div.photo.under-header {
+	height: 400px;
 }
 

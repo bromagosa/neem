@@ -70,7 +70,8 @@ function init() {
  */
 
 function bindEvents() {
-	scrollableElement.onmousewheel = function(evt){ scrolled(evt) };
+	scrollableElement.onmousewheel = function(evt){ scrolled(evt) }; // CHROME
+	if (window.addEventListener) { window.addEventListener('DOMMouseScroll', scrolled, false) }; //FIREFOX
 	scrollLine.bind('mousedown',     function(evt){ clicked(evt) });
 	scrollBall.bind('drag',          function(evt){ dragged(evt) });
 	scrollBall.bind('dragstart',     function(evt){ scrollLine[0].style.backgroundColor = "#ff8103"; scrollBall[0].style.backgroundColor = "#c16000" });
@@ -81,7 +82,7 @@ function bindEvents() {
 
 function dragged(evt) {
 	if (documentHeight > windowHeight) {
-		var scrollBallPosition = Math.min(Math.max(0 , evt.offsetY - 45), windowHeight - scrollBallHeight);
+		var scrollBallPosition = Math.min(Math.max(0 , evt.offsetY - 75), windowHeight - scrollBallHeight);
 		scrollBall[0].style.top = scrollBallPosition + "px";
 		scrollLine[0].style.opacity = 1;
 		scrollableElement.scrollTop = (scrollBallPosition / (windowHeight - scrollBallHeight)) * (documentHeight - windowHeight);
@@ -90,15 +91,20 @@ function dragged(evt) {
 
 function scrolled(evt) {
 	if (documentHeight > windowHeight) {
-		scrollableElement.scrollTop = scrollableElement.scrollTop - evt.wheelDelta; 
-		scrollBall[0].style.top = ((scrollableElement.scrollTop / (documentHeight - windowHeight )) * (windowHeight - scrollBallHeight)) + "px"; 
+		if (evt.wheelDelta) { scrollableElement.scrollTop = scrollableElement.scrollTop - evt.wheelDelta }; // CHROME
+		if (evt.detail) { scrollableElement.scrollTop = scrollableElement.scrollTop + evt.detail * 6 }; // FIREFOX
+		refreshScrollBallPosition();
 	}
 }
 
 function clicked(evt) {
 	if (documentHeight > windowHeight) {
-		var scrollBallPosition = Math.min(Math.max(0 , evt.offsetY), windowHeight - scrollBallHeight);
+		var scrollBallPosition = Math.min(Math.max(0 , evt.pageY - scrollLine.position().top), windowHeight - scrollBallHeight);
 		scrollBall[0].style.top = scrollBallPosition + "px";
 		scrollableElement.scrollTop = (scrollBallPosition / (windowHeight - scrollBallHeight)) * (documentHeight - windowHeight);
 	}
+}
+
+function refreshScrollBallPosition() {
+	scrollBall[0].style.top = ((scrollableElement.scrollTop / (documentHeight - windowHeight )) * (windowHeight - scrollBallHeight)) + "px"; 
 }

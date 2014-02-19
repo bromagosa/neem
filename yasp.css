@@ -11,8 +11,8 @@
 #scrollLine {
 	border-radius: 20px;
 	position: absolute;
-	right: 15px;
-	top: 45px;
+	right: 0px;
+	top: 35px;
 	width: 10px;
 	background-color: #ffa953;
 }
