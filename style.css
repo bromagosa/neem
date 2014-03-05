@@ -19,7 +19,16 @@ a {
 }
 
 span {
+	line-height: 30px;
 	text-align: justify;
+}
+
+h2 {
+	margin: 1.5em;
+}
+
+h3 {
+	margin-top: 2em;
 }
 
 /* CLASSES GENÈRIQUES */
